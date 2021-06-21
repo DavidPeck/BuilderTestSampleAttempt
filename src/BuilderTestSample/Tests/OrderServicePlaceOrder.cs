@@ -11,6 +11,15 @@ namespace BuilderTestSample.Tests
         private readonly OrderBuilder _orderBuilder = new ();
 
         [Fact]
+        public void CreatesOrderGivenOrderWithNoId()
+        {
+            var order = _orderBuilder                            
+                            .Build();
+
+            Assert.NotNull(order);
+        }
+
+        [Fact]
         public void ThrowsExceptionGivenOrderWithExistingId()
         {
             var order = _orderBuilder

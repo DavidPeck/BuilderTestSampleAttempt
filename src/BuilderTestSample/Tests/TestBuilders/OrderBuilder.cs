@@ -11,7 +11,8 @@ namespace BuilderTestSample.Tests.TestBuilders
 
         public OrderBuilder()
         {
-            _order.TotalAmount = 100m;
+            _order.Id = 0;
+            _order.TotalAmount = 0m;
 
             // TODO: replace next lines with a CustomerBuilder you create
             // _order.Customer = new Customer();
@@ -23,6 +24,18 @@ namespace BuilderTestSample.Tests.TestBuilders
             _order.Id = id;
             return this;
         }
+
+
+        //public OrderBuilder WithTestValues()
+        //{
+        //    _order.TotalAmount = 100m;
+
+        //    // TODO: replace next lines with a CustomerBuilder you create
+        //    // _order.Customer = new Customer();
+        //    // _order.Customer.HomeAddress = new Address();
+
+        //    return this;
+        //}
 
         public Order Build()
         {
