@@ -22,6 +22,7 @@ namespace BuilderTestSample.Services
 
             if (order.TotalAmount <= 0) throw new InvalidOrderException("Order TotalAmount must be greater than 0.");
 
+            if (order.Customer is null) throw new InvalidOrderException("Order must have an associated customer.");
             // TODO: order must have a customer (customer is not null)
 
             ValidateCustomer(order.Customer);

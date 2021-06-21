@@ -38,5 +38,15 @@ namespace BuilderTestSample.Tests
 
             Assert.Throws<InvalidOrderException>(() => _orderService.PlaceOrder(order));
         }
+
+        [Fact]
+        public void ThrowsExceptionOrderWithNoAssociatedCustomer()
+        {
+            var order = _orderBuilder
+                            .WithCustomer(null)
+                            .Build();
+
+            Assert.Throws<InvalidOrderException>(() => _orderService.PlaceOrder(order));
+        }
     }
 }

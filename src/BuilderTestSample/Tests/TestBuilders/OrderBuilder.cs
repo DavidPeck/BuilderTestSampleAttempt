@@ -19,6 +19,12 @@ namespace BuilderTestSample.Tests.TestBuilders
             // _order.Customer.HomeAddress = new Address();
         }
 
+        internal OrderBuilder WithCustomer(Customer customer)
+        {
+            _order.Customer = customer;
+            return this;
+        }
+
         public OrderBuilder WithId(int id)
         {
             _order.Id = id;
